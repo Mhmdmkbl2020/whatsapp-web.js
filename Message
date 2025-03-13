@@ -1,0 +1,4 @@
+if (message.body === '!ملف') {
+  const media = MessageMedia.fromFilePath('file.pdf');
+  client.sendMessage(message.from, media);
+}
