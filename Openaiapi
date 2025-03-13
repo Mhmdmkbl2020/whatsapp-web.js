@@ -1,0 +1,10 @@
+const { Configuration, OpenAIApi } = require('openai');
+const configuration = new Configuration({ apiKey: 'YOUR_KEY' });
+const openai = new OpenAIApi(configuration);
+
+// داخل حدث الرسالة
+const response = await openai.createCompletion({
+  model: "text-davinci-003",
+  prompt: message.body
+});
+chat.sendMessage(response.data.choices[0].text);
